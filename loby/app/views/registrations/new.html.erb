@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="small-12 columns">
+    <h1>Registrations#new</h1>
+  </div>
+</div>
+<div class="row">
+  <%= form_for @user, url: registrations_path do |f| %>
+    <%= render "shared/error_messages", :target => @user %>
+    <div class="small-3 columns">
+      <%= f.label :email %>
+    </div>
+    <div class="small-9 columns">
+      <%= f.text_field :email %>
+    </div>
+    <div class="small-3 columns">
+      <%= f.label :password %>
+    </div>
+    <div class="small-9 columns">
+      <%= f.password_field :password %>
+    </div>
+    <div class="small-12 columns">
+      משתמש קיים? <%= link_to 'התחבר!', new_sessions_path %>
+      <%= f.submit %>
+    </div>
+  <% end %>
+
+</div>

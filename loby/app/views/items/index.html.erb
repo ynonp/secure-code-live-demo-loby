@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="small-6 columns">
+    <h1>פריטים למסירה</h1>
+  </div>
+  <div class="small-2 columns end header-buttons">
+    <%= link_to 'הצע פריט למסירה', new_item_path, class: 'button' %>
+  </div>
+</div>
+
+<% @items.each do |item| %>
+<div class="row">
+  <div class="small-8 columns">
+    <div class="media-object">
+      <div class="media-object-section">
+        <div class="thumbnail">
+          <img src="<%= raw item.image_path %>" width="64" height="64" />
+        </div>
+      </div>
+      <div class="media-object-section">
+        <h4>
+          <%= item.name %>
+          <% if item.user == current_user %>
+            <%= link_to '[מחיקה]', item, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </h4>
+        <p><%= item.description %></p>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

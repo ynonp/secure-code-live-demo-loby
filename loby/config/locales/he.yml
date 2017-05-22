@@ -1,0 +1,18 @@
+he:
+  activerecord:
+    models:
+      user: משתמש
+      item: פריט
+
+    attributes:
+      user:
+        name: שם משתמש
+        email: כתובת מייל
+        password: סיסמא
+      item:
+        name: שם
+        description: תיאור
+        price: מחיר
+        image: תמונה
+
+
